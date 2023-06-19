@@ -186,19 +186,8 @@ keywordstyle=\fontfamily{lmtt}\bfseries
 \DeclareMathOperator*{\amx}{arg\,max}
 
 
-\DeclareMathOperator{\Corr}{Corr}
-\DeclareMathOperator{\sCorr}{sCorr}
-\DeclareMathOperator{\sCov}{sCov}
-\DeclareMathOperator{\sVar}{sVar}
+\DeclareMathOperator{\Log}{Log}
 
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\cov}{Cov}
-\DeclareMathOperator{\Bin}{Bin}
-\DeclareMathOperator*{\plim}{plim}
-\DeclareMathOperator{\MSE}{MSE}
-\DeclareMathOperator{\softmax}{softmax}
-\DeclareMathOperator{\Med}{Med}
 
 
 \renewcommand{\P}{\mathbb{P}}
@@ -216,10 +205,6 @@ keywordstyle=\fontfamily{lmtt}\bfseries
 
 
 \newcommand{\wv}{\textrm{word2vec}}
-\newcommand{\hVar}{\widehat{\Var}}
-\newcommand{\hCorr}{\widehat{\Corr}}
-\newcommand{\hCov}{\widehat{\Cov}}
-
 
 \newcommand{\RR}{\mathbb{R}}
 
@@ -306,6 +291,19 @@ keywordstyle=\fontfamily{lmtt}\bfseries
   \end{enumerate}
 \end{sol}
 \end{problem}
+
+
+\section{Первые функции}
+
+Под записью $\log z$ мы подразумеваем все значения логарифма, а под записью $\Log z$ — главное значение логарифма.
+
+\begin{problem}
+Упростите $\exp(\log z)$ и $\log(\exp(z))$.
+\begin{sol}
+  $\exp(\log z) = z$, $\log(\exp(z)) = z + 2\pi i$.
+\end{sol}
+\end{problem}
+
 
 \Closesolutionfile{solution_file}
 
