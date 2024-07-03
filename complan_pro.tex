@@ -5,6 +5,7 @@
 
 %!TeX cleanPatterns = $OUTDIR/$JOB!($OUTEXT|.synctex.gz|.tex|.pdf), /$OUTDIR/_minted-$JOB/
 \documentclass[12pt, a4paper]{article}
+\usepackage{libertine}
 
 % utf8 is the preferred encoding
 
@@ -25,10 +26,10 @@
 
 % download "Linux Libertine" fonts:
 % http://www.linuxlibertine.org/index.php?id=91&L=1
-\setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
+% \setmainfont{Linux Libertine O} % or Helvetica, Arial, Cambria
 % why do we need \newfontfamily:
 % http://tex.stackexchange.com/questions/91507/
-\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+% \newfontfamily{\cyrillicfonttt}{Linux Libertine O}
 
 \newfontfamily\arabicfont[Script=Arabic]{Scheherazade New}
 
@@ -127,8 +128,9 @@
 % 4. Не сокращайте .1 вместо 0.1
 % 5. Повторяющееся значение повторяйте, а не говорите "то же"
 
-\usepackage{physics}
+% \usepackage{physics} % bad style collection
 % \usepackage{minted} % moved to listings to simplify development
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \usepackage{listings}
 \lstset{%
 basicstyle=\fontfamily{lmtt}\bfseries,
@@ -291,6 +293,72 @@ keywordstyle=\fontfamily{lmtt}\bfseries
   \end{enumerate}
 \end{sol}
 \end{problem}
+
+\section{Геометрия}
+
+Эти задачи можно легко решить с помощью комплексных чисел. 
+
+\begin{problem}
+Рассмотрим произвольный треугольник $\triangle ABC$. 
+На сторонах $AB$ и $BC$ отложены два квадрата, $ABDE$ и $BCFG$. 
+Центры этих квадратов соединены отрезком. 
+На середине отрезка отмечена точка $P$.
+
+Где может быть расположена точка $P$ в зависимости от расположения точки $B$ исходного треугольника?
+\begin{sol}
+Расположение точки $P$ не зависит от расположения точки $B$. 
+\end{sol}
+\end{problem}
+
+
+\begin{problem}
+Теорема Наполена. Рассмотрим произвольный треугольник $\triangle ABC$. 
+На сторонах треугольника отложены три равносторонних треугольника. 
+Центры этих трёх треугольников попарно соединены. 
+
+Чему равны углы получившегося треугольника?
+\begin{sol}
+$60^{\circ}$
+\end{sol}
+\end{problem}
+
+\begin{problem}
+Рассмотрим произвольный выпуклый четырёхугольник $ABCD$. 
+На его сторонах отложены четыре квадрата. 
+Центры противолежащий квадратов соединены отрезками. 
+
+\begin{enumerate}
+  \item Под каким углом расположены эти отрезки?
+  \item Как связаны между собой длины этих отрезков?
+\end{enumerate}
+\begin{sol}
+Отрезки пересекаются под прямым углом, а их длины равны. 
+\end{sol}
+\end{problem}
+
+\begin{problem}
+На единичной окружности на равных расстояниях расставлены $n$ точек. 
+Одна из точек соединена со всеми остальными. 
+
+Чему равно произведение длин полученных отрезков?
+\begin{sol}
+Обозначим единичные корни с помощью $z_0  = 1$, $z_1$, \ldots, $z_{n-1}$.
+Нам нужно найти значение:
+\[
+(z_0 - z_1) (z_0 - z_2) \ldots (z_0 - z_{n-1}).
+\]
+Вместо $z_0$ рассмотрим произвольную точку $z$:
+\[
+(z - z_1) (z - z_2) \ldots (z - z_{n-1}) = \frac{(z - z_0)(z - z_1)(z - z_2) \ldots (z - z_{n-1})}{z - z_0} = \frac{z^n - 1}{z - 1} = 1 + z + z^2 + \ldots + z^{n-1}
+\]
+Остаётся устремить $z \to z_0 = 1$ и получить, что 
+\[
+(z_0 - z_1) (z_0 - z_2) \ldots (z_0 - z_{n-1}) = n
+\]
+\end{sol}
+\end{problem}
+
+  
 
 
 \section{Первые функции}
